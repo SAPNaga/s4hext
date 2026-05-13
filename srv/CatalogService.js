@@ -21,10 +21,10 @@ module.exports = class CatalogService extends cds.ApplicationService { init() {
                               salesOrderApi.schema.TO_ITEM
                             )
                             .execute({
-                             // destinationName: "S4D"
-                               "url": process.env.URL,
-                               "username": process.env.USER,
-                               "password": process.env.PASSWORD
+                              destinationName: "S4D"
+                              // "url": process.env.URL,
+                              // "username": process.env.USER,
+                              // "password": process.env.PASSWORD
                             });
 
     return dataSales;
@@ -60,7 +60,7 @@ module.exports = class CatalogService extends cds.ApplicationService { init() {
 
   });
 
-  /*
+  
   this.on('CREATE', MySalesOrder, async(req) => {
 
     let payload = req.data;
@@ -95,9 +95,9 @@ module.exports = class CatalogService extends cds.ApplicationService { init() {
                             .create(salesOrderNew)
                             .execute({
                               destinationName: "S4D"
-                              // "url": process.env.URL,
-                              // "username": process.env.USER,
-                              // "password": process.env.PASSWORD
+                             // "url": process.env.URL,
+                            // "username": process.env.USER,
+                             //  "password": process.env.PASSWORD
                             });
       
       return result;
@@ -106,7 +106,7 @@ module.exports = class CatalogService extends cds.ApplicationService { init() {
     }
 
   });
-  */
+  
 
   return super.init()
 }}

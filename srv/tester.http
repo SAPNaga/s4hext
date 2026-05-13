@@ -1,0 +1,27 @@
+
+###Get All orders from S4 HANA
+http://localhost:4004/CatalogService/MySalesOrder
+
+###POST data to S/4HANA
+POST http://localhost:4004/CatalogService/MySalesOrder
+Content-Type: application/json
+
+{
+        "SalesOrderType": "OR",
+        "SalesOrganization": "BMGB",
+        "DistributionChannel": "DB",
+        "OrganizationDivision": "AC",
+        "SalesDistrict": "000001",
+        "SoldToParty": "49",
+        "SalesOrderDate": "2026-04-12",
+        "to_Item": {
+            "results": [
+            {
+                "SalesOrderItem": "10",
+                "Material": "220",
+                "RequestedQuantity": "5",
+                "RequestedQuantityUnit": "PC"
+            }
+            ]
+        }
+}

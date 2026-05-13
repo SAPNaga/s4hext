@@ -1,0 +1,18 @@
+{
+    "exportTime": "2026-04-11 14:46:23.37772747",
+    "destination": {
+        "Name": "S4HANA",
+        "Type": "HTTP",
+        "Authentication": "BasicAuthentication",
+        "ProxyType": "Internet",
+        "URL": "http://s4hana10.saraswatitechnologies.in:8010/",
+        "WebIDEEnabled": "true",
+        "User": "<your sap user>",
+        "Password": "<removed>",
+        "Description": "Anubhav Company SAP S/4HANA",
+        "WebIDEUsage": "odata_abap,dev_abap",
+        "sap-client": "800",
+        "product.name": "SAP S/4HANA",
+        "HTML5.DynamicDestination": "true"
+    }
+}

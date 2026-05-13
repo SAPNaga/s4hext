@@ -1,0 +1,111 @@
+{
+  "info": {
+    "_postman_id": "421ed444-46b3-46c4-8852-7925cb3ebcca",
+    "name": "Sales Order API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14691148"
+  },
+  "item": [
+    {
+      "name": "Get Sales Order from SAP",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "your sap password",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "your sap user",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-csrf-Token",
+            "value": "fetch"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic bW9iMzp1c2VyQDMzMw=="
+          }
+        ],
+        "url": {
+          "raw": "https://s4hana10.saraswatitechnologies.in:44310/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('185')?$format=json&$expand=to_Item",
+          "protocol": "https",
+          "host": [
+            "s4hana10",
+            "saraswatitechnologies",
+            "in"
+          ],
+          "port": "44310",
+          "path": [
+            "sap",
+            "opu",
+            "odata",
+            "sap",
+            "API_SALES_ORDER_SRV",
+            "A_SalesOrder('185')"
+          ],
+          "query": [
+            {
+              "key": "$format",
+              "value": "json"
+            },
+            {
+              "key": "$expand",
+              "value": "to_Item"
+            }
+          ]
+        },
+        "description": "Fetch The Token from SAP System"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Sales Order in SAP",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-csrf-Token",
+            "value": "HkdEA-Uw-GqE67kLUy-z3Q=="
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n        \"SalesOrderType\": \"OR\",\n        \"SalesOrganization\": \"BMGB\",\n        \"DistributionChannel\": \"DB\",\n        \"OrganizationDivision\": \"AC\",\n        \"SalesDistrict\": \"000001\",\n        \"SoldToParty\": \"49\",\n        \"SalesOrderDate\": \"/Date(1775433600000)/\",\n        \"to_Item\": {\n            \"results\": [\n            {\n                \"SalesOrderItem\": \"10\",\n                \"Material\": \"220\",\n                \"RequestedQuantity\": \"5\",\n                \"RequestedQuantityUnit\": \"PC\"\n            }\n            ]\n        }\n}"
+        },
+        "url": {
+          "raw": "https://s4hana10.saraswatitechnologies.in:44310/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder",
+          "protocol": "https",
+          "host": [
+            "s4hana10",
+            "saraswatitechnologies",
+            "in"
+          ],
+          "port": "44310",
+          "path": [
+            "sap",
+            "opu",
+            "odata",
+            "sap",
+            "API_SALES_ORDER_SRV",
+            "A_SalesOrder"
+          ]
+        },
+        "description": "Create Sales Order from payload"
+      },
+      "response": []
+    }
+  ]
+}
